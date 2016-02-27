@@ -1,0 +1,15 @@
+﻿<Window x:Class="RootFinder.FunctionConvertXMLWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FunctionConvertXMLWindow" Height="191.046" Width="361.194" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Range (format: [a,b]):" HorizontalAlignment="Left" Margin="36,53,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Number of points:" HorizontalAlignment="Left" Margin="36,84,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtRange" HorizontalAlignment="Left" Height="23" Margin="175,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtCount" HorizontalAlignment="Left" Height="23" Margin="175,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Convert to XML!" HorizontalAlignment="Left" Margin="190,125,0,0" VerticalAlignment="Top" Width="105" Click="ButtonConvertToXML_Click"/>
+        <Label Content="f(x):" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top" Width="41" FontStyle="Italic" FontSize="14"/>
+        <Label x:Name="lblFunc" Content="[lblFunc]" Margin="77,13,15,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

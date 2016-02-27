@@ -1,0 +1,10 @@
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\ParseInterpolateAndFindRoots.exe.config
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\ParseInterpolateAndFindRoots.exe
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\ParseInterpolateAndFindRoots.pdb
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\ExprTree.dll
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\ExprTree.pdb
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\obj\Debug\ParseInterpolateAndFindRoots.exe
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\obj\Debug\ParseInterpolateAndFindRoots.pdb
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\Polynom.dll
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\bin\Debug\Polynom.pdb
+D:\Stud\2nd course\OOP\CourseWork\RootFinding_src\ParseInterpolateAndFindRoots\ParseInterpolateAndFindRoots\obj\Debug\ParseInterpolateAndFindRoots.csprojResolveAssemblyReference.cache

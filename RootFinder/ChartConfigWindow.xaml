@@ -1,0 +1,43 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RootFinder" x:Class="RootFinder.ChartConfigWindow"
+        Title="ChartConfigWindow" Height="269.82" Width="433.94" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:RangeValueConverter x:Key="RangeValueConverter"/>
+        <local:AccuracyValueConverter x:Key="AccuracyValueConverter"/>
+    </Window.Resources>
+    <Grid Margin="0,0,2,-1">
+        <GroupBox Header="Here you can configure some chart properties:" Margin="10">
+            <Grid>
+                <Label Content="Accuracy:" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                <Label Content="X - Range:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+                <Label Content="Y - Range:" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top"/>
+                <Button Content="OK" HorizontalAlignment="Left" Margin="309,169,0,0" VerticalAlignment="Top" Width="75" Click="ButtonOK_Clicked"/>
+                <Button Content="Cancel" HorizontalAlignment="Left" Margin="203,169,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCancel_Clicked"/>
+                <StackPanel Margin="136,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="262" Height="32" VerticalAlignment="Top">
+                    <Label Content="Low" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Slider x:Name="sldrAcc" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="97" Minimum="1" Maximum="8" LargeChange="1" SmallChange="1" Value="4"/>
+                    <Label Content="High" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top"/>
+                    <Label Content="{Binding Value, Converter={StaticResource AccuracyValueConverter}, ElementName=sldrAcc, IsAsync=True}" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="92" />
+                </StackPanel>
+                <StackPanel Margin="136,55,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="228" Height="28" VerticalAlignment="Top">
+                    <Label Content="From:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40"/>
+                    <TextBox x:Name="txtXFrom" HorizontalAlignment="Left" Height="23" Margin="0,3,0,0" TextWrapping="Wrap" Text="{Binding Text, Converter={StaticResource RangeValueConverter}, ElementName=txtXTo}" VerticalAlignment="Top" Width="60"/>
+                    <Label Content="To:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="txtXTo" HorizontalAlignment="Left" Height="23" Margin="0,3,0,0" TextWrapping="Wrap" Text="{Binding Text, Converter={StaticResource RangeValueConverter}, ElementName =txtXFrom}" VerticalAlignment="Top" Width="60"/>
+                </StackPanel>
+                <StackPanel x:Name="stackYRange" Margin="136,81,0,0" Orientation="Horizontal" HorizontalAlignment="Left" Width="228" Height="28" VerticalAlignment="Top">
+                    <Label Content="From:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40"/>
+                    <TextBox x:Name="txtYFrom" HorizontalAlignment="Left" Height="23" Margin="0,3,0,0" TextWrapping="Wrap" Text="{Binding Text, ElementName=txtYTo, Converter={StaticResource RangeValueConverter}}" VerticalAlignment="Top" Width="60"/>
+                    <Label Content="To:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" HorizontalContentAlignment="Right"/>
+                    <TextBox x:Name="txtYTo" HorizontalAlignment="Left" Height="23" Margin="0,3,0,0" TextWrapping="Wrap" Text="{Binding Text, ElementName=txtYFrom, Converter={StaticResource RangeValueConverter}}" VerticalAlignment="Top" Width="60"/>
+
+                </StackPanel>
+                <CheckBox x:Name="chkBindYFx" Content="Bind Y-Range to F(x) range" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Checked="chkBindYFx_Checked" Unchecked="chkBindYFx_Checked"/>
+                <CheckBox x:Name="chkBindYGx" Content="Bind Y-Range to G(x) range" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Checked="chkBindYGx_Checked" Unchecked="chkBindYGx_Checked"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

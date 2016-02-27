@@ -1,0 +1,73 @@
+﻿<Window x:Class="RootFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Root Finder" Height="567.911" Width="947.529">
+    <DockPanel>
+        <Menu Height="25" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="Open _XML table" Click="MenuOpenXML_Click" />
+                <MenuItem Header="Save _report" x:Name="btnReport" Click="MenuReport_Click" IsEnabled="False" ToolTip="Save report on last root finding process."/>
+                <MenuItem Header="_Exit" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Edit XML data table" x:Name="menEditXMLTable" Click="MenuEditXMLTable_Click" IsEnabled="False" />
+                <MenuItem Header="_Convert function to XML" Click="MenuConvertFuncToXML_Click" />
+            </MenuItem>
+            <MenuItem Header="_Chart">
+                <MenuItem Header="_Show chart" x:Name="menShowChart" Click="MenuShowChart_Clicked" IsEnabled="False"/>
+                <MenuItem Header="_Config" x:Name="menChartCfg" Click="MenuChartConfig_Clicked" IsEnabled="{Binding IsEnabled, ElementName=menShowChart}"/>
+            </MenuItem>
+            <MenuItem Header="_Properties">
+                <MenuItem Header="Search interval" Click="MenuSrcInterval_Click" IsEnabled="{Binding IsEnabled, ElementName=btnFindRoots}"/>
+                <MenuItem Header="Accuracy" Click="MenuAccuracy_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Show help" Click="MenuHelp_Click"/>
+                <MenuItem Header="_About" Click="MenuAbout_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="263*"/>
+                <ColumnDefinition Width="733*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter Width="5" Background="Black" />
+            <TextBox x:Name="txtFx" Grid.Column="1" Height="25" Margin="118,76,70,0" TextWrapping="Wrap"  VerticalAlignment="Top" ToolTip="Here must be your function, dependant on 'x'" FontFamily="Times New Roman" FontStyle="Italic" FontSize="15" LostKeyboardFocus="txtFx_LostKeybFocus"/>
+            <Label Content="F(x)" Grid.Column="1" HorizontalAlignment="Left" Margin="69,76,0,0" VerticalAlignment="Top" Height="25" Width="30"/>
+            <Label Content="G(x)" Grid.Column="1" HorizontalAlignment="Left" Margin="68,156,0,0" VerticalAlignment="Top" Height="24"/>
+            <Button Content="Create New" Grid.Column="1" HorizontalAlignment="Left" Margin="118,156,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCreateXML_Click"/>
+            <Button Content="Load from XML" Grid.Column="1" HorizontalAlignment="Left" Margin="220,156,0,0" VerticalAlignment="Top" Width="96" Click="ButtonLoadXML_Click" />
+            <Button x:Name="btnSaveChangesToXML" Content="Save changes to XML" Grid.Column="1" HorizontalAlignment="Left" Margin="340,156,0,0" VerticalAlignment="Top" Width="126" IsEnabled="False" Click="ButtonSaveTableToXML_Click"/>
+            <Button x:Name="btnFindRoots" Content="Find roots" HorizontalAlignment="Left" Margin="24,0,0,10" Width="182" Height="35" VerticalAlignment="Bottom" Click="ButtonFindRoots_Click"/>
+            <Expander x:Name="expSummary" Header="Summary" Margin="0,10,19,0" VerticalAlignment="Top" Height="440" IsEnabled="False">
+                <Grid>
+                    <Label Content="Search interval:" HorizontalAlignment="Left" Margin="8,10,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblSrcInterval" Content="[lblSrcInterval]" Margin="123,10,19,0" VerticalAlignment="Top"/>
+                    <Label Content="Eps." HorizontalAlignment="Left" Margin="8,36,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblEps"  Content="[lblEps]" Margin="123,36,56,0" VerticalAlignment="Top"/>
+                    <Label Content="Interpolation error:" HorizontalAlignment="Left" Margin="8,62,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblInterpError" Content="[lblInterpError]" Margin="123,62,10,0" VerticalAlignment="Top"/>
+                    <Label Content="Number of roots:" HorizontalAlignment="Left" Margin="8,93,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblRoots" Content="[lblRoots]" HorizontalAlignment="Left" Margin="123,93,0,0" VerticalAlignment="Top" Width="94"/>
+                    <Button Content="Show all roots" HorizontalAlignment="Left" Margin="123,124,0,0" VerticalAlignment="Top" Width="94" Click="ButtonShowAllRoots_Click"/>
+                    <Label Content="Power of Lagrange polynomial:" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="lblLagPower" Content="[lblLagPower]" HorizontalAlignment="Left" Margin="123,198,0,0" VerticalAlignment="Top" Width="85"/>
+                    <Label Content="Lagrange polynomial:" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Show" HorizontalAlignment="Left" Margin="139,234,0,0" VerticalAlignment="Top" Width="75" Click="ButtonPolynomShow_Click"/>
+                </Grid>
+            </Expander>
+            <DataGrid x:Name="pointGrid" ItemsSource="{Binding}" ColumnWidth="*" Grid.Column="1" HorizontalAlignment="Left" Margin="68,185,0,38" Width="554" HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto" IsReadOnly="True" CanUserDeleteRows="True" CellEditEnding="pointGridCellEdit_Click"/>
+            <Button Style="{StaticResource shakePictoBtn}" Grid.Column="1" HorizontalAlignment="Right" Margin="0,46,70,0" VerticalAlignment="Top"  Click="btnSaveFExpr">
+                <Button.Content>
+                    <Image Source="Save-as-icon.png" Stretch="Fill"/>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource shakePictoBtn}" Grid.Column="1" HorizontalAlignment="Left" Margin="567,46,0,0" VerticalAlignment="Top" Click="btnOpenFExpr">
+                <Button.Content>
+                    <Image Source="open-file-icon.png" Stretch="Fill"/>
+                </Button.Content>
+            </Button>
+
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfPoint xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Point>
+    <X>-1.5</X>
+    <Y>-14.101419947171719</Y>
+  </Point>
+  <Point>
+    <X>-0.75</X>
+    <Y>-0.93159645994407247</Y>
+  </Point>
+  <Point>
+    <X>0</X>
+    <Y>0</Y>
+  </Point>
+  <Point>
+    <X>0.75</X>
+    <Y>0.93159645994407247</Y>
+  </Point>
+  <Point>
+    <X>1.5</X>
+    <Y>14.101419947171719</Y>
+  </Point>
+</ArrayOfPoint>
